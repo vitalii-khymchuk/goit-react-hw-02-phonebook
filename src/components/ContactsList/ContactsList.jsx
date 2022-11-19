@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import { Button } from 'components/Button.styled';
+import { Button } from 'components/reusableComponents';
+import { Box } from 'components/reusableComponents';
+import { Title } from 'components/reusableComponents';
 import { ContactItem } from './ContactsList.styled';
-import { Box } from '../Box.styled';
-import { Title } from 'components/Title.styled';
 
 export default function ContactsList({ contacts, onContactDelete }) {
   return (

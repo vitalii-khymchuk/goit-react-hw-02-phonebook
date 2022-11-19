@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Box } from './Box.styled';
+import { Box } from './reusableComponents';
 import ContactsInput from './ContactsInput';
 import ContactsList from './ContactsList';
 import Filter from './Filter';
@@ -34,7 +34,7 @@ export class App extends Component {
     this.setState(prevState => {
       const currentContacts = prevState.contacts;
       return {
-        contacts: [...currentContacts].filter(({ id }) => id !== contactId),
+        contacts: currentContacts.filter(({ id }) => id !== contactId),
       };
     });
   };
@@ -44,9 +44,7 @@ export class App extends Component {
   };
 
   render() {
-    const onFormSubmit = this.onFormSubmit;
-    const onContactDelete = this.onContactDelete;
-    const onFilterChange = this.onFilterChange;
+    const { onFormSubmit, onContactDelete, onFilterChange } = this;
     const filterValue = this.state.filter;
     const contacts = this.state.contacts;
     const filteredContacts = contacts.filter(

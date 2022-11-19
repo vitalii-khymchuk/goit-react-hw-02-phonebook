@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { Box } from '../Box.styled';
-import { Title } from 'components/Title.styled';
+import { Box } from 'components/reusableComponents';
+import { Title } from 'components/reusableComponents';
 
 export default function Filter({ onFilterChange, value }) {
   function onChange(e) {
